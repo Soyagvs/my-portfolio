@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import { Resend } from "resend";
-import "../Contact/Contact.css";
+import "../Contact/Contact.css"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,24 +21,27 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // Envía el correo electrónico utilizando Resend
-    const resend = new Resend('re_Duni3dRF_7KH2jbV98YKgMESPSXZjr3bq');
+    // Define el endpoint de Formspree
+    const endpoint = 'https://formspree.io/f/mkndyvyg';
   
-    resend.emails.send({
-      from: formData.email, // Utiliza el correo electrónico del remitente como el remitente del correo electrónico
-      to: 'soyagvs@gmail.com', // Cambia esto a la dirección de correo electrónico a la que quieres enviar el formulario
-      subject: 'Nuevo mensaje de contacto',
-      html: `
-        <p>Nombre: ${formData.name}</p>
-        <p>Correo electrónico: ${formData.email}</p>
-        <p>Mensaje: ${formData.message}</p>
-      `
-    }).then((response) => {
-      console.log('Email sent successfully:', response);
-      setSubmitted(true); // Establece submitted en true después de enviar el correo electrónico
-    }).catch((error) => {
+    // Envía los datos del formulario al endpoint de Formspree
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Email sent successfully');
+        setSubmitted(true);
+      } else {
+        console.error('Error sending email');
+      }
+    })
+    .catch(error => {
       console.error('Error sending email:', error);
-      // Maneja cualquier error que ocurra durante el envío del correo electrónico
     });
   };
 
@@ -51,8 +53,7 @@ const Contact = () => {
       {submitted ? (
         <p className="submitted-message">Form has been submitted!</p>
       ) : (
-        <form
-          onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
@@ -88,13 +89,10 @@ const Contact = () => {
               required
             />
           </div>
-          <a type="submit" href="mailTo:soyagvs@gmail.com">
-            <button className="submit-btn">
-              {" "}
-              Submit
-              <FaCheck> </FaCheck>{" "}
-            </button>
-          </a>
+          <button type="submit" className="submit-btn">
+            Submit
+            <FaCheck />
+          </button>
         </form>
       )}
     </div>

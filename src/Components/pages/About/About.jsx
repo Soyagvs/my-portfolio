@@ -1,5 +1,7 @@
 import React from "react";
 import Skills from "../../Skills.jsx";
+import cv from "../../../../public/AM-CV.pdf";
+
 const About = () => {
   return (
     <>
@@ -18,7 +20,7 @@ const About = () => {
             I am always looking to <strong>learn</strong> and <strong>grow</strong> in this ever-evolving world and I am excited to share my work with you.
           </p>
 
-          <a href="AM-CV.pdf" download>
+          <a href={cv} download>
             <button>
               Download Resume
             </button>

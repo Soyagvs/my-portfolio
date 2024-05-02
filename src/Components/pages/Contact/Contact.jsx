@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { Resend } from "resend";
 import "../Contact/Contact.css";
 
 const Contact = () => {
@@ -20,8 +21,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");
-    setSubmitted(true);
+  
+    // Envía el correo electrónico utilizando Resend
+    const resend = new Resend('re_Duni3dRF_7KH2jbV98YKgMESPSXZjr3bq');
+  
+    resend.emails.send({
+      from: formData.email, // Utiliza el correo electrónico del remitente como el remitente del correo electrónico
+      to: 'soyagvs@gmail.com', // Cambia esto a la dirección de correo electrónico a la que quieres enviar el formulario
+      subject: 'Nuevo mensaje de contacto',
+      html: `
+        <p>Nombre: ${formData.name}</p>
+        <p>Correo electrónico: ${formData.email}</p>
+        <p>Mensaje: ${formData.message}</p>
+      `
+    }).then((response) => {
+      console.log('Email sent successfully:', response);
+      setSubmitted(true); // Establece submitted en true después de enviar el correo electrónico
+    }).catch((error) => {
+      console.error('Error sending email:', error);
+      // Maneja cualquier error que ocurra durante el envío del correo electrónico
+    });
   };
 
   return (
@@ -33,8 +52,6 @@ const Contact = () => {
         <p className="submitted-message">Form has been submitted!</p>
       ) : (
         <form
-          action="https://formspree.io/f/mkndyvyg"
-          method="POST"
           onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>

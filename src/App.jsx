@@ -1,8 +1,8 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Nav from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Nav from "./Components/common/Navbar/Navbar";
+import Footer from "./Components/common/Footer/Footer";
 import Home from "./Components/pages/Home/Home";
 import About from "./Components/pages/About/About";
 import Project from "./Components/pages/Projects/Projects";
@@ -39,7 +39,7 @@ function App() {
         <>
           <Nav />
           <MoveToTop />
-
+          
           <TransitionGroup>
             <CSSTransition key={location.key} classNames="fade" timeout={500}>
               <Routes location={location}>
@@ -50,7 +50,7 @@ function App() {
               </Routes>
             </CSSTransition>
           </TransitionGroup>
-
+          
           <Footer />
         </>
       )}

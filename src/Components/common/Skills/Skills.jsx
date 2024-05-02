@@ -1,4 +1,6 @@
 import React from "react";
+import "../Skills/Skills.css"
+
 import {
   FaReact,
   FaGithub,

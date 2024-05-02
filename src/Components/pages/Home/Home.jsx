@@ -5,6 +5,9 @@ import Tilt from "react-parallax-tilt";
 import Avatar from "../../../assets/img/user.png";
 import { CgPhone } from "react-icons/cg";
 import { BsPerson } from "react-icons/bs";
+import "../Home/Home.css"
+
+
 const Home = () => {
   return (
     <div>
@@ -15,23 +18,26 @@ const Home = () => {
             I'm <strong>Agustin Martinez</strong>
           </h1>
           <Type />
-          <Link to="/About">
-            <button className="blue">
-              About Me
-              <BsPerson />
-            </button>
-          </Link>
+          <div className="btn">
+            <Link to="/About">
+              <button className="blue">
+                About Me
+                <BsPerson />
+              </button>
+            </Link>
 
-          <Link to="/Contact">
-            <button className="green">
-              Contact <CgPhone />
-            </button>
-          </Link>
+            <Link to="/Contact">
+              <button className="green">
+                Contact <CgPhone />
+              </button>
+            </Link>
+          </div>
         </div>
         <Tilt>
           <img className="Avatar" src={Avatar} alt="Imagen de perfil" />
         </Tilt>
       </div>
+
     </div>
   );
 };

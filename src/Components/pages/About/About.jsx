@@ -1,6 +1,7 @@
 import React from "react";
-import Skills from "../../Skills.jsx";
+import Skills from "../../common/Skills/Skills";
 import cv from "../../../../public/AM-CV.pdf";
+import "../About/About.css"
 
 const About = () => {
   return (

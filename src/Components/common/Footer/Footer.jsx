@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
+import "../Footer/Footer.css"
 
 const Footer = () => {
   const date = new Date();

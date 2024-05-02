@@ -1,12 +1,11 @@
 import React from "react";
-import ProjectBox from "../../ProjectBox";
-
+import "../Projects/Projects.css";
 
 const Projects = () => {
   return (
     <div>
       <h2 className="projectHeading">
-        My <b>Projects</b>
+        My <strong>Projects</strong>
       </h2>
       {/*en projectPhoto{} va la ruta dentro
       /*<div className="project">

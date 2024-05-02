@@ -1,0 +1,23 @@
+.projectBox {
+    width: 350px;
+    border: 3px solid var(--color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0px 25px 50px 25px;
+    transition: 0.5s;
+}
+
+.projectBox:hover {
+    transform: scale(1.05);
+    background-color: rgb(27, 39, 125);
+}
+
+.projectPhoto {
+    display: block;
+    width: 100%;
+    margin: 0px 0px;
+}

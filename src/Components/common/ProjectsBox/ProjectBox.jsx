@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
+import "../ProjectBox/ProjectBox.css"
 
 const ProjectBox = ({ projectPhoto, projectName }) => {
   const desc = {

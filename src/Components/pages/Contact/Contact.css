@@ -1,0 +1,96 @@
+.contact-container {
+    position: relative;
+    margin-top: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+.contact-container h2 {
+    margin-top: 30%;
+    text-align: center;
+    color: var(--color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+@media (max-width: 390px) {
+
+    .form-group input,
+    .form-group textarea {
+        width: 95%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 412px) {
+
+    .form-group input,
+    .form-group textarea {
+        width: 95%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .form-group input,
+    .form-group textarea {
+        width: 95%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .form-group input,
+    .form-group textarea {
+        width: 95%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+a .submit-btn {
+    margin: 0 auto;
+    display: flex;
+    width: 60%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.submitted-message {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 20px;
+}

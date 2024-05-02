@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import "../Contact/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,17 +26,23 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h2>Contact Me</h2>
+      <h2>
+        Contact <strong>Me</strong>
+      </h2>
       {submitted ? (
         <p className="submitted-message">Form has been submitted!</p>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form
+          action="https://formspree.io/f/mkndyvyg"
+          method="POST"
+          onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="your name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -47,6 +54,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
+              placeholder="example@example.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -57,6 +65,7 @@ const Contact = () => {
             <textarea
               id="message"
               name="message"
+              placeholder="leave me a message .."
               value={formData.message}
               onChange={handleChange}
               required

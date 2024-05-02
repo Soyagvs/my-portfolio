@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsPerson, BsCodeSlash } from "react-icons/bs";
 import { CgPhone } from "react-icons/cg";
+import "../Navbar/Navbar.css"
 
 const Nav = () => {
   const [navbarblur, setnavbarblur] = useState(false);

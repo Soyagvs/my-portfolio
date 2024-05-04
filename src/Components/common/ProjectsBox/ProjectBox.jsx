@@ -1,15 +1,15 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
-import "../ProjectBox/ProjectBox.css"
+import "../ProjectsBox/ProjectBox.css"
 
 const ProjectBox = ({ projectPhoto, projectName }) => {
   const desc = {
-    LevelsDesc:
-      "This website is a for a local gym to help with their sales.This helped me understand React better and more clearly. I also learned how to host on vercel.",
-    LevelsGithub: "https://github.com/EshaalB/Gym-Website",
-    LevelsWebsite: "https://gym-website-pink.vercel.app/",
-
+    ShoppGuitarDesc:
+      "This site is for buying guitars, with a reactive shopping cart made with react and hosted on vercel.",
+    ShoppGuitarGithub: "https://github.com/Soyagvs/shopping-cart-reactjs",
+    ShoppGuitarWebsite: "https://shopping-guitar.vercel.app/",
+/*
     MovieDesc:
       "This web app  is for helping you find your desired movie.The project helped me with understanding the working of API.I also learned new CSS properties and tricks.",
     MovieGithub: "https://github.com/EshaalB/Movie-App",
@@ -23,11 +23,11 @@ const ProjectBox = ({ projectPhoto, projectName }) => {
     BackpackDesc:
       "This webpageis was made for an ecommerce brand showcasing their backpacks.The project taught me how to use custom cursors and arrange text in a much better way",
     BackpackGithub: "https://github.com/EshaalB/Landing-Page--React-",
-    BackpackWebsite: "https://landing-page-react-sage.vercel.app/",
+BackpackWebsite: "https://landing-page-react-sage.vercel.app/",*/
   };
 
   return (
-     
+
     <div className="projectBox">
       <img className="projectPhoto" src={projectPhoto} alt="Project display" />
       <div>

@@ -3,12 +3,12 @@
     padding: 70px 0;
     letter-spacing: 0.4px;
     font-size: 36px;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .project {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 25px 5%;
+    margin: -50px 5%;
 }

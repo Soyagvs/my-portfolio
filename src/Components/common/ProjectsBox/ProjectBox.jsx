@@ -29,7 +29,7 @@ BackpackWebsite: "https://landing-page-react-sage.vercel.app/",*/
   return (
 
     <div className="projectBox">
-      <img className="projectPhoto" src={projectPhoto} alt="Project display" />
+      <img className="projectPhoto" src={projectPhoto} alt="Project display" title="Title project" loading="lazy"/>
       <div>
         <br />
         <h3>{projectName}</h3>

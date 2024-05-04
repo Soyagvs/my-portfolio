@@ -14,7 +14,15 @@
 .SkillBox:hover {
     transform: scale(1.2);
     background-color: var(--color);
-    border: none;
+    border:none;
+}
+@media (max-width:390px){
+    .skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 }
 
 .SkillsHeading {

@@ -9,27 +9,27 @@ const ProjectBox = ({ projectPhoto, projectName }) => {
       "This site is for buying guitars, with a reactive shopping cart made with react and hosted on vercel.",
     ShoppGuitarGithub: "https://github.com/Soyagvs/shopping-cart-reactjs",
     ShoppGuitarWebsite: "https://shopping-guitar.vercel.app/",
-/*
-    MovieDesc:
-      "This web app  is for helping you find your desired movie.The project helped me with understanding the working of API.I also learned new CSS properties and tricks.",
-    MovieGithub: "https://github.com/EshaalB/Movie-App",
-    MovieWebsite: "https://film-mania.vercel.app/",
 
-    ColourPaletteDesc:
-      "This website helps you generate random colours that you can use as a palette.The project helped me understand Javascript more deeply using advance techniques",
-    ColourPaletteGithub: "https://github.com/EshaalB/Colour-palette-Generator",
-    ColourPaletteWebsite: "https://colourpalettegen.netlify.app",
-
-    BackpackDesc:
-      "This webpageis was made for an ecommerce brand showcasing their backpacks.The project taught me how to use custom cursors and arrange text in a much better way",
-    BackpackGithub: "https://github.com/EshaalB/Landing-Page--React-",
-BackpackWebsite: "https://landing-page-react-sage.vercel.app/",*/
+    WeeklyExpensesDesc:
+      "This website is based on a shopping list to keep track of your expenses and hosted on vercel.",
+    WeeklyExpensesGithub: "https://github.com/Soyagvs/weekly-expenses",
+    WeeklyExpensesWebsite: "https://misgastos.vercel.app/"
+    /*
+        ColourPaletteDesc:
+          "This website helps you generate random colours that you can use as a palette.The project helped me understand Javascript more deeply using advance techniques",
+        ColourPaletteGithub: "https://github.com/EshaalB/Colour-palette-Generator",
+        ColourPaletteWebsite: "https://colourpalettegen.netlify.app",
+    
+        BackpackDesc:
+          "This webpageis was made for an ecommerce brand showcasing their backpacks.The project taught me how to use custom cursors and arrange text in a much better way",
+        BackpackGithub: "https://github.com/EshaalB/Landing-Page--React-",
+    BackpackWebsite: "https://landing-page-react-sage.vercel.app/",*/
   };
 
   return (
 
     <div className="projectBox">
-      <img className="projectPhoto" src={projectPhoto} alt="Project display" title="Title project" loading="lazy"/>
+      <img className="projectPhoto" src={projectPhoto} alt="Project display" title="Title project" loading="lazy" />
       <div>
         <br />
         <h3>{projectName}</h3>

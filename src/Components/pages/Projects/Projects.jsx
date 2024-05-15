@@ -12,7 +12,7 @@ const Projects = () => {
       </h2>
       <div className="project">
         <ProjectBox projectPhoto={photo} projectName="ShoppGuitar" />
-        <ProjectBox projectPhoto={photo2} projectName="WeeklyExpenses" />
+        {/*<ProjectBox projectPhoto={photo2} projectName="WeeklyExpenses" />*/}
         {/*<ProjectBox projectPhoto="../../../../public/shopping-guitar.png" projectName="ColourPalette" />
         <ProjectBox projectPhoto="../../../../public/shopping-guitar.png" projectName="Backpack" />*/}
       </div>

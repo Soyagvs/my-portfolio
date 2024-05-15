@@ -22,8 +22,8 @@
 }
 
 .Avatar {
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
     mix-blend-mode: screen;
     border-radius: 100%;
 }

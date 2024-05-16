@@ -8,14 +8,14 @@ const ProjectBox = ({ projectPhoto, projectName }) => {
     ShoppGuitarDesc:
       "This site is for buying guitars, with a reactive shopping cart made with react and hosted on vercel.",
     ShoppGuitarGithub: "https://github.com/Soyagvs/shopping-cart-reactjs",
-    ShoppGuitarWebsite: "https://shopping-guitar.vercel.app/"
+    ShoppGuitarWebsite: "https://shopping-guitar.vercel.app/",
 
-    /*WeeklyExpensesDesc:
-      "This website is based on a shopping list to keep track of your expenses and hosted on vercel.",
-    WeeklyExpensesGithub: "https://github.com/Soyagvs/weekly-expenses",
-    WeeklyExpensesWebsite: "https://misgastos.vercel.app/"
-    
-        ColourPaletteDesc:
+    WeatherAppDesc:
+      "This website is based on a weather app consuming an API and is hosted on vercel.",
+    WeatherAppGithub: "https://github.com/Soyagvs/app-clima-react",
+    WeatherAppWebsite: "https://climacity-api.vercel.app/",
+
+    /*ColourPaletteDesc:
           "This website helps you generate random colours that you can use as a palette.The project helped me understand Javascript more deeply using advance techniques",
         ColourPaletteGithub: "https://github.com/EshaalB/Colour-palette-Generator",
         ColourPaletteWebsite: "https://colourpalettegen.netlify.app",

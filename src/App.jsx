@@ -39,7 +39,6 @@ function App() {
         <>
           <Nav />
           <MoveToTop />
-          
           <TransitionGroup>
             <CSSTransition key={location.key} classNames="fade" timeout={500}>
               <Routes location={location}>
@@ -50,7 +49,6 @@ function App() {
               </Routes>
             </CSSTransition>
           </TransitionGroup>
-          
           <Footer />
         </>
       )}

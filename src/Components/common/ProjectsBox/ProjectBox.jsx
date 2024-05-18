@@ -5,7 +5,7 @@ import './ProjectBox.css';
 const ProjectBox = ({ projectPhoto, projectName, projectDesc, projectGithub, projectWebsite }) => {
   return (
     <div className="projectBox">
-      <img className="projectPhoto" src={`${projectPhoto}`} alt={`${projectName} display`} title={`${projectName} project`} loading="lazy" />
+      <img className="projectPhoto" src={projectPhoto} alt={`${projectName} display`} title={`${projectName} project`} loading="lazy" />
       <div>
         <br />
         <h3>{projectName}</h3>

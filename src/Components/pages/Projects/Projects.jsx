@@ -1,20 +1,31 @@
-import React from "react";
-import ProjectBox from "../../common/ProjectsBox/ProjectBox.jsx"
-import "../Projects/Projects.css";
-import photo from "../../../assets/img/shopping-guitar.png"
-import photo2 from "../../../assets/img/weatherApp.png"
+import React, { useEffect, useState } from 'react';
+import ProjectBox from '../../common/ProjectsBox/ProjectBox';
+import '../Projects/Projects.css';
+import projectsData from '../../../data/Projects.json'; 
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setProjects(projectsData);
+  }, []);
+
   return (
     <div>
       <h2 className="projectHeading">
         My <strong>Projects</strong>
       </h2>
       <div className="project">
-        <ProjectBox projectPhoto={photo} projectName="ShoppGuitar" />
-        <ProjectBox projectPhoto={photo2} projectName="WeatherApp" />
-        {/*<ProjectBox projectPhoto="../../../../public/shopping-guitar.png" projectName="ColourPalette" />
-        <ProjectBox projectPhoto="../../../../public/shopping-guitar.png" projectName="Backpack" />*/}
+        {projects.map((project) => (
+          <ProjectBox
+            key={project.id}
+            projectPhoto={project.photo}
+            projectName={project.name}
+            projectDesc={project.description}
+            projectGithub={project.github}
+            projectWebsite={project.website}
+          />
+        ))}
       </div>
     </div>
   );

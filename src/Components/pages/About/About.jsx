@@ -28,7 +28,7 @@ const About = () => {
         <div></div>
       </div>
 
-      <h1 className="SkillsHeading"> Skillset</h1>
+      <h2 className="SkillsHeading"> Skillset</h2>
       <div className="skills">
         <Skills skill="HTML" />
         <Skills skill="CSS" />

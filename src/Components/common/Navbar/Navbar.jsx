@@ -1,79 +1,70 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsPerson, BsCodeSlash } from "react-icons/bs";
 import { CgPhone } from "react-icons/cg";
-import "../Navbar/Navbar.css"
+import "../Navbar/Navbar.css";
 
 const Nav = () => {
-  const [navbarblur, setnavbarblur] = useState(false);
+  const [navbarblur, setNavbarBlur] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      setnavbarblur(true);
-    } else {
-      setnavbarblur(false);
-    }
-  }
+  useEffect(() => {
+    const scrollHandler = () => {
+      setNavbarBlur(window.scrollY >= 20);
+    };
 
-  let showMenu = () => {
-    let bar = document.getElementsByClassName("bar");
-    let ham = document.getElementsByClassName("NavbarLinks");
-    bar[0].classList.toggle("barOne");
-    bar[1].classList.toggle("barTwo");
-    bar[2].classList.toggle("barThree");
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
-    ham[0].classList.toggle("showNavbar");
+  const toggleMenu = () => {
+    const bars = document.querySelectorAll(".bar");
+    const ham = document.querySelector(".NavbarLinks");
+    bars.forEach(bar => bar.classList.toggle("barOne"));
+    bars.forEach(bar => bar.classList.toggle("barTwo"));
+    bars.forEach(bar => bar.classList.toggle("barThree"));
+    ham.classList.toggle("showNavbar");
   };
 
-  let hideMenu = () => {
-    let bar = document.getElementsByClassName("bar");
-    let ham = document.getElementsByClassName("NavbarLinks");
-    bar[0].classList.remove("barOne");
-    bar[1].classList.remove("barTwo");
-    bar[2].classList.remove("barThree");
-    ham[0].classList.remove("showNavbar");
+  const closeMenu = () => {
+    const bars = document.querySelectorAll(".bar");
+    const ham = document.querySelector(".NavbarLinks");
+    bars.forEach(bar => bar.classList.remove("barOne", "barTwo", "barThree"));
+    ham.classList.remove("showNavbar");
   };
-
-  window.addEventListener("scroll", scrollHandler);
 
   return (
     <nav className={navbarblur ? "Navbar blur" : "Navbar"}>
-      <h1
-        title="Reload"
-        onClick={() => window.location.reload(true)}
-        className="Logo"
-      >
+      <h2 title="Logo" className="Logo" onClick={closeMenu}>
         AM
-      </h1>
+      </h2>
 
-      <div className="Hamburger" onClick={showMenu}>
+      <div className="Hamburger" onClick={toggleMenu}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
 
       <ul className="NavbarLinks">
-        <li onClick={hideMenu}>
+        <li onClick={closeMenu}>
           <Link to="/">
-            <AiOutlineHome /> Home
+            <AiOutlineHome /> <span className="link-text">Home</span>
           </Link>
         </li>
-        <li onClick={hideMenu}>
+        <li onClick={closeMenu}>
           <Link to="/About">
-            <BsPerson /> About
+            <BsPerson /> <span className="link-text">About</span>
           </Link>
         </li>
-        <li onClick={hideMenu}>
+        <li onClick={closeMenu}>
           <Link to="/Project">
-            <BsCodeSlash /> Projects
+            <BsCodeSlash /> <span className="link-text">Projects</span>
           </Link>
         </li>
-        <li onClick={hideMenu}>
+        <li onClick={closeMenu}>
           <Link to="/Contact">
             <CgPhone />
-            Contact
+            <span className="link-text">Contact</span>
           </Link>
         </li>
       </ul>

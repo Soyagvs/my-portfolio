@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import "../Contact/Contact.css"
+import "../Contact/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +8,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [formStatus, setFormStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,31 +18,30 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Define el endpoint de Formspree
-    const endpoint = 'https://formspree.io/f/mkndyvyg';
-  
-    // Envía los datos del formulario al endpoint de Formspree
-    fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
+
+    const endpoint = "https://formspree.io/f/mkndyvyg";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
       if (response.ok) {
-        console.log('Email sent successfully');
-        setSubmitted(true);
+        setFormStatus("success");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        console.error('Error sending email');
+        setFormStatus("error");
       }
-    })
-    .catch(error => {
-      console.error('Error sending email:', error);
-    });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -50,51 +49,52 @@ const Contact = () => {
       <h2>
         Contact <strong>Me</strong>
       </h2>
-      {submitted ? (
-        <p className="submitted-message">Form has been submitted!</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="your name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@example.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="leave me a message .."
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn">
-            Submit
-            <FaCheck />
-          </button>
-        </form>
+      {formStatus === "success" && (
+        <p className="form-success">Form has been submitted!</p>
       )}
+      {formStatus === "error" && (
+        <p className="form-error">Error submitting form. Please try again later.</p>
+      )}
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Example@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Leave me a message ..."
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="submit-btn">
+          Submit <FaCheck alt="Submit Icon" />
+        </button>
+      </form>
     </div>
   );
 };

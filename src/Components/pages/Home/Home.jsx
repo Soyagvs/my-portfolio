@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Type from "../../Type.jsx";
 import Tilt from "react-parallax-tilt";
-import Avatar from "../../../assets/img/user.png";
+import Avatar from "../../../../public/assets/img/user.png";
 import { CgPhone } from "react-icons/cg";
 import { BsPerson } from "react-icons/bs";
-import "../Home/Home.css"
-
+import "../Home/Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <div className="HomePage">
         <div className="HomeText">
           <h2>Hello there!</h2>
@@ -21,8 +20,7 @@ const Home = () => {
           <div className="btn">
             <Link to="/About">
               <button className="blue">
-                About Me
-                <BsPerson />
+                About Me <BsPerson />
               </button>
             </Link>
 
@@ -34,11 +32,10 @@ const Home = () => {
           </div>
         </div>
         <Tilt>
-          <img className="Avatar" src={Avatar} alt="Imagen de perfil" />
+          <img className="Avatar" src={Avatar} alt="Profile Avatar" />
         </Tilt>
       </div>
-
-    </div>
+    </main>
   );
 };
 

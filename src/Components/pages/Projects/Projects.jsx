@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectBox from '../../common/ProjectsBox/ProjectBox';
 import '../Projects/Projects.css';
 import projectsData from '../../../data/Projects.json'; 

@@ -90,11 +90,12 @@
         position: fixed;
         inset: 0 0 0 50%;
         gap: 50px;
-        background-color: #0c2f69;
+        background-color: #FF7400;
         height: 100vh;
         padding-top: max(20%, 120px);
         transform: translateX(100%);
         transition: 0.5s;
+        
     }
 
     .showNavbar {
@@ -135,5 +136,10 @@
         bottom: 4px;
         rotate: 225deg;
         transition: 0.5s;
+    }
+}
+@media (max-width: 1000px){
+    .NavbarLinks a:hover {
+        color: #ffffff;
     }
 }

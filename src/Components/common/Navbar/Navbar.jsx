@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsPerson, BsCodeSlash } from "react-icons/bs";
 import { CgPhone } from "react-icons/cg";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "../Navbar/Navbar.css";
 
 const Nav = () => {
   const [navbarblur, setNavbarBlur] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -18,19 +20,11 @@ const Nav = () => {
   }, []);
 
   const toggleMenu = () => {
-    const bars = document.querySelectorAll(".bar");
-    const ham = document.querySelector(".NavbarLinks");
-    bars.forEach(bar => bar.classList.toggle("barOne"));
-    bars.forEach(bar => bar.classList.toggle("barTwo"));
-    bars.forEach(bar => bar.classList.toggle("barThree"));
-    ham.classList.toggle("showNavbar");
+    setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => {
-    const bars = document.querySelectorAll(".bar");
-    const ham = document.querySelector(".NavbarLinks");
-    bars.forEach(bar => bar.classList.remove("barOne", "barTwo", "barThree"));
-    ham.classList.remove("showNavbar");
+    setMenuOpen(false);
   };
 
   return (
@@ -40,12 +34,14 @@ const Nav = () => {
       </h2>
 
       <div className="Hamburger" onClick={toggleMenu}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
+        {menuOpen ? (
+          <AiOutlineClose className="icon" />
+        ) : (
+          <AiOutlineMenu className="icon" />
+        )}
       </div>
 
-      <ul className="NavbarLinks">
+      <ul className={`NavbarLinks ${menuOpen ? "showNavbar" : ""}`}>
         <li onClick={closeMenu}>
           <Link to="/">
             <AiOutlineHome /> <span className="link-text">Home</span>

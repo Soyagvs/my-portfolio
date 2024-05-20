@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Type from "../../Type.jsx";
 import Tilt from "react-parallax-tilt";
-import Avatar from "../../../../public/user.png";
+import Avatar from "/assets/img/user.png";
 import { CgPhone } from "react-icons/cg";
 import { BsPerson } from "react-icons/bs";
 import "../Home/Home.css";

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Shopp Guitar",
     "photo": "/assets/img/shopping-guitar.png",
-    "description": "Store based website with purchasing logic, made with react and hosted on vercel.",
+    "description": "Store website with purchase logic, made with React + CSS and hosted on vercel.",
     "github": "https://github.com/Soyagvs/shopping-cart-reactjs",
     "website": "https://shopping-guitar.vercel.app/"
   },
@@ -11,8 +11,16 @@
     "id": 2,
     "name": "Weather App",
     "photo": "/assets/img/weatherApp.png",
-    "description": "This website is based on a weather app consuming an API and is hosted on vercel.",
+    "description": "This weather website is made with React + CSS + API and is hosted on vercel.",
     "github": "https://github.com/Soyagvs/app-clima-react",
     "website": "https://climacity-api.vercel.app/"
+  },
+  {
+    "id": 3,
+    "name": "Netflix Copy",
+    "photo": "/assets/img/netflix-copy.png",
+    "description": "This website is the Netflix copy made with Astro + Tailwind hosted on vercel.",
+    "github": "https://github.com/Soyagvs/netflix-copy-astro",
+    "website": "https://astro-netflix.vercel.app/"
   }
 ]

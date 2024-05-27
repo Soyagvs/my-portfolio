@@ -39,6 +39,7 @@ const About = () => {
         <Skills skill="Laravel" />
         <Skills skill="Github" />
         <Skills skill="Node" />
+        <Skills skill="Astro" />
       </div>
     </>
   );

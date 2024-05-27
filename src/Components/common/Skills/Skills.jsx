@@ -10,9 +10,10 @@ import {
   FaCss3,
   FaLaravel,
   FaNodeJs,
+  
 } from "react-icons/fa";
 import { DiJavascript1 } from "react-icons/di";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss, SiAstro } from "react-icons/si";
 
 const Skills = ({ skill }) => {
   const icon = {
@@ -26,6 +27,7 @@ const Skills = ({ skill }) => {
     Npm: { icon: <FaNpm />, label: "npm" },
     Laravel: { icon: <FaLaravel />, label: "Laravel" },
     Node: { icon: <FaNodeJs />, label: "Node.js" },
+    Astro :{icon: <SiAstro />, label: "Astro"},
   };
 
   const renderSkillIcon = () => {

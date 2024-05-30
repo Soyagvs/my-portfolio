@@ -22,5 +22,13 @@
     "description": "This website is the Netflix copy made with Astro + Tailwind hosted on vercel.",
     "github": "https://github.com/Soyagvs/netflix-copy-astro",
     "website": "https://copy-nfx.vercel.app/"
+  },
+  {
+    "id": 4,
+    "name": "Anubis Web",
+    "photo": "/assets/img/anubis-web.png",
+    "description": "This website is design based, made with Astro + Tailwind hosted on vercel.",
+    "github": "https://github.com/Soyagvs/project-web-anubis",
+    "website": "https://anubis-web.vercel.app/"
   }
 ]
